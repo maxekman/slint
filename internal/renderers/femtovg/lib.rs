@@ -252,7 +252,7 @@ impl<B: GraphicsBackend> FemtoVGRenderer<B> {
                     let commands = femtovg_canvas.flush_to_output(surface.render_output());
                     self.graphics_backend.submit_commands(commands);
 
-                    femtovg_canvas.set_size(width.get(), height.get(), scale);
+                    femtovg_canvas.set_size(surface_size.width, surface_size.height, scale);
                     select_render_target(&mut femtovg_canvas, render_target);
                     drop(femtovg_canvas);
 
